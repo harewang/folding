@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paper folding</title>
+<style>
+.container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid #aaa;
+    position: relative;
+}   
+.fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.back {
+    border-top: 100px dashed #ccc;
+    border-left: 100px dashed #fff;
+    position: absolute;
+    /*background: #ccc;*/
+}
+.border {
+    width: 145%;
+    height: 0;
+    border-top: 1px dashed #000;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+}
+a
+.rotator {
+    transition: transform .8s;
+    position: absolute;
+}
+a:focus .rotator {
+    transform: rotate3d(1,1,0,180deg);
+}
+
+.front {
+    width: 141px;
+    height: 141px;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+    border-left: 1px dashed #000;
+    overflow: hidden;
+    position: absolute;
+    left: -1px;
+}
+.corner {
+    width: 100px;
+    height: 100px;
+    background: #c3a9a9;
+    transform: rotate(45deg);
+    position: absolute;
+    left: -49px;
+    top: 20px;
+    
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+    <p>使用:focus伪类</p>
+    <p>在红色区域点击翻页</p>
+    <p>其它区域点击翻页回去</p>
+        <div class="fold">
+            <div class="back"></div>
+            <a href="#">
+                <div class="rotator">
+                <div class="front">
+                    <div class="corner"></div>
+                </div>
+            </div>
+            </a>
+            
+            
+        </div>
+    </div>
+</body>
+</html>
